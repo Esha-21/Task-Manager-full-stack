@@ -1,0 +1,174 @@
+/* ---------------------------
+   🔮 Animated Background
+----------------------------*/
+.presentation-body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff8af2, #8f00ff, #3a0ca3);
+    background-size: 300% 300%;
+    animation: gradientMove 10s ease infinite;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: white;
+    position: relative;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating glass circles */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    animation: floatUp 10s infinite ease-in-out;
+    filter: blur(12px);
+    z-index: 1;
+}
+
+.circle:nth-child(1) { width:120px; height:120px; left:10%; top:20%; animation-duration:12s; }
+.circle:nth-child(2) { width:150px; height:150px; right:10%; top:50%; animation-duration:15s; }
+.circle:nth-child(3) { width:100px; height:100px; left:40%; top:75%; animation-duration:10s; }
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity:0.5; }
+    50% { transform: translateY(-40px) scale(1.1); opacity:0.9; }
+    100% { transform: translateY(0) scale(1); opacity:0.5; }
+}
+
+/* ---------------------------
+   🟦 Glass Container
+----------------------------*/
+.presentation-container {
+    width: 430px;
+    padding: 30px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 25px;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.25);
+    z-index: 2;
+    animation: slideUp 1.2s ease, glow 4s infinite alternate;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(60px); opacity:0; }
+    to { transform: translateY(0); opacity:1; }
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 20px rgba(255,255,255,0.25); }
+    to { box-shadow: 0 0 40px rgba(255,255,255,0.6); }
+}
+
+/* ---------------------------
+   ✨ Typography
+----------------------------*/
+.presentation-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 28px;
+    animation: fadeText 1.4s ease, textGlow 2s infinite alternate;
+    text-shadow: 0 0 12px rgba(255,255,255,0.8);
+}
+
+@keyframes fadeText {
+    from { opacity:0; transform: translateY(-20px); }
+    to { opacity:1; transform: translateY(0); }
+}
+
+@keyframes textGlow {
+    from { text-shadow: 0 0 8px #ffb3ff; }
+    to { text-shadow: 0 0 18px #ffffff; }
+}
+
+/* ---------------------------
+   📝 Textarea
+----------------------------*/
+textarea {
+    width: 100%;
+    height: 140px;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: rgba(255,255,255,0.85);
+    color: #3a0ca3;
+    font-weight: 600;
+    resize: none;
+}
+
+/* ---------------------------
+   🔘 Buttons
+----------------------------*/
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: none;
+    font-size: 18px;
+    border-radius: 15px;
+    color: white;
+    background: linear-gradient(135deg, #ff00c8, #ff5900);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 0, 128, 0.4);
+}
+
+button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 12px 32px rgba(255, 0, 128, 0.7);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* ---------------------------
+   🖼 Output Image
+----------------------------*/
+#outputImage {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 15px;
+    display: none;
+    animation: popIn 0.8s ease;
+    border: 2px solid rgba(255,255,255,0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+@keyframes popIn {
+    from { transform: scale(0.7); opacity:0; }
+    to { transform: scale(1); opacity:1; }
+}
+
+/* ---------------------------
+   ⬇ Download Button
+----------------------------*/
+#downloadBtn {
+    display: none;
+    margin-top: 12px;
+    padding: 14px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #00ff88, #00c2ff);
+    cursor: pointer;
+    color: #000;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(0,255,128,0.5);
+}
+
+#downloadBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,255,128,0.7);
+}
