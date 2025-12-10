@@ -152,8 +152,4 @@ Task categories
 
 Dark mode
 
-👩‍💻 Author
 
-Esha Dillikar
-Full Stack Developer
-📩 eshadillikar@gmail.com
